@@ -1,6 +1,4 @@
 {
-  "name": "Try the Look — Runway",
-  "description": "Six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "name": "ELASHA Artwear & Apparel",
+  "description": "Storefront and admin dashboard for ELASHA artwear and apparel studio, featuring limited-edition collections, made-to-order apparel, and custom garment designs."
 }
