@@ -78,6 +78,7 @@ export function CheckoutPage() {
   const { items, total, clearCart } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const checkoutEnabled = import.meta.env.VITE_ENABLE_CHECKOUT === 'true';
   const [submitting, setSubmitting] = useState(false);
   const [pendingPayment, setPendingPayment] = useState<PreparedPayment | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -109,6 +110,10 @@ export function CheckoutPage() {
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+    if (!checkoutEnabled) {
+      setError('Ordering is temporarily disabled while this ELASHA preview is being verified. Your cart is safe; no order or payment has been created.');
+      return;
+    }
     if (!user) { setError('Please log in before checkout.'); return; }
     if (items.length === 0) return;
     if (!shippingSettingsLoaded || shippingFeeInr === null) {
@@ -199,6 +204,10 @@ export function CheckoutPage() {
   }
 
   async function handlePayNow() {
+    if (!checkoutEnabled) {
+      setError('Razorpay is disabled in this preview. No payment has been initiated.');
+      return;
+    }
     if (!pendingPayment || submitting) return;
     setSubmitting(true);
     setError(null);
@@ -384,11 +393,11 @@ export function CheckoutPage() {
                   </p>
                 </div>
               ) : !pendingPayment ? (
-                <Button type="submit" disabled={submitting || !user || !shippingSettingsLoaded || shippingFeeInr === null} className="mt-6 w-full bg-crimson text-bone hover:bg-crimson-light font-bold text-xs uppercase tracking-[0.2em] py-4 transition-all duration-300 shadow-lg shadow-crimson/25 rounded-sm" size="lg">
-                  {submitting ? 'Securing checkout…' : 'Verify Price & Reserve Stock'}
+                <Button type="submit" disabled={!checkoutEnabled || submitting || !user || !shippingSettingsLoaded || shippingFeeInr === null} className="mt-6 w-full bg-crimson text-bone hover:bg-crimson-light font-bold text-xs uppercase tracking-[0.2em] py-4 transition-all duration-300 shadow-lg shadow-crimson/25 rounded-sm" size="lg">
+                  {!checkoutEnabled ? 'Ordering Disabled in Preview' : submitting ? 'Securing checkout…' : 'Verify Price & Reserve Stock'}
                 </Button>
               ) : (
-                <Button type="button" onClick={() => void handlePayNow()} disabled={submitting} className="mt-6 w-full bg-crimson text-bone hover:bg-crimson-light font-bold text-xs uppercase tracking-[0.2em] py-4 transition-all duration-300 shadow-lg shadow-crimson/25 rounded-sm" size="lg">
+                <Button type="button" onClick={() => void handlePayNow()} disabled={!checkoutEnabled || submitting} className="mt-6 w-full bg-crimson text-bone hover:bg-crimson-light font-bold text-xs uppercase tracking-[0.2em] py-4 transition-all duration-300 shadow-lg shadow-crimson/25 rounded-sm" size="lg">
                   <CreditCard className="mr-2 h-4 w-4" /> {submitting ? 'Connecting to Razorpay…' : 'Pay ' + formatPrice(pendingPayment.total) + ' with Razorpay'}
                 </Button>
               )}
