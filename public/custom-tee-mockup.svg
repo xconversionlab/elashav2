@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3b3936"/><stop offset=".48" stop-color="#252422"/><stop offset="1" stop-color="#171716"/>
+    </linearGradient>
+    <radialGradient id="light" cx="12%" cy="16%" r="82%">
+      <stop stop-color="#aaa59a" stop-opacity=".54"/><stop offset=".45" stop-color="#5c5953" stop-opacity=".18"/><stop offset="1" stop-color="#050505" stop-opacity=".16"/>
+    </radialGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0.9" y2="1">
+      <stop stop-color="#f1c17b"/><stop offset=".35" stop-color="#c7833d"/><stop offset=".72" stop-color="#9b592b"/><stop offset="1" stop-color="#e6ae67"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2=".3">
+      <stop stop-color="#050505"/><stop offset=".16" stop-color="#151515"/><stop offset=".45" stop-color="#090909"/><stop offset=".74" stop-color="#111"/><stop offset="1" stop-color="#030303"/>
+    </linearGradient>
+    <linearGradient id="fabricLight" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#6e6e6e" stop-opacity=".06"/><stop offset=".28" stop-color="#b5b5b5" stop-opacity=".17"/><stop offset=".5" stop-color="#222" stop-opacity=".05"/><stop offset=".8" stop-color="#777" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity=".08"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="texture">
+      <feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="2" seed="8"/>
+      <feColorMatrix values="0 0 0 0 .22 0 0 0 0 .21 0 0 0 0 .19 0 0 0 .12 0"/>
+    </filter>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#92702b"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#8c6b1f"/></linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#wall)"/>
+  <rect width="400" height="600" fill="url(#light)"/>
+  <rect width="400" height="600" filter="url(#texture)" opacity=".38"/>
+  <g opacity=".26" fill="#050505">
+    <path d="M0 410C26 385 31 351 20 326C47 350 52 379 43 404C65 388 72 363 67 341C92 375 89 411 65 438L0 465Z"/>
+    <path d="M0 465C34 448 42 428 39 407C63 430 69 455 59 476L0 510Z"/>
+  </g>
+  <ellipse cx="202" cy="469" rx="118" ry="22" fill="#000" opacity=".45" filter="url(#shadow)"/>
+  <path d="M222 39C222 20 234 8 249 9C267 10 270 32 260 45L239 68L239 102" fill="none" stroke="#17191a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M222 39C222 20 234 8 249 9C267 10 270 32 260 45L239 68" fill="none" stroke="#7b7b78" stroke-opacity=".55" stroke-width="1.4"/>
+  <path d="M239 66L239 102" stroke="#6d6a65" stroke-width="4"/>
+  <path d="M82 121L200 77L319 121L200 169Z" fill="#000" opacity=".38" filter="url(#shadow)"/>
+  <path d="M108 120L200 77L291 119L255 146L145 146Z" fill="url(#wood)" stroke="#8a552c" stroke-width="1.4"/>
+  <path d="M116 118L200 84L282 118" fill="none" stroke="#f8d29a" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M126 122L197 91M139 128L202 98M259 126L210 101" stroke="#8c4e25" stroke-opacity=".28" stroke-width="1.4"/>
+  <path d="M142 145C156 155 176 161 200 161C225 161 246 155 259 145" fill="none" stroke="#372a1d" stroke-width="5"/>
+  <path d="M146 143C153 164 174 179 200 179C226 179 247 164 254 143L279 154L320 186L356 288L309 314L281 271L288 475Q200 489 112 475L119 271L91 314L44 288L80 186L121 154Z" fill="#000" opacity=".56" filter="url(#shadow)"/>
+  <path d="M143 149L119 156L81 186L46 287L92 311L119 267L114 473Q200 489 286 473L281 267L308 311L354 287L319 186L281 156L257 149L238 164Q220 180 200 180Q180 180 162 164Z" fill="url(#shirt)" stroke="#252525" stroke-width="1.4"/>
+  <path d="M145 149L160 164Q179 183 200 183Q221 183 240 164L255 149" fill="none" stroke="#292929" stroke-width="4"/>
+  <path d="M153 153Q164 186 200 187Q236 186 247 153" fill="none" stroke="#050505" stroke-width="8"/>
+  <path d="M157 156Q169 179 200 180Q231 179 243 156" fill="none" stroke="#4a4a4a" stroke-opacity=".55" stroke-width="1.2"/>
+  <path d="M120 164L92 289M280 164L308 289" stroke="#515151" stroke-opacity=".32" stroke-width="2"/>
+  <path d="M119 276L91 305M281 276L309 305" stroke="#626262" stroke-opacity=".28" stroke-width="1.4"/>
+  <path d="M119 267L130 286L126 452M281 267L270 286L274 452" fill="none" stroke="#444" stroke-opacity=".23" stroke-width="2"/>
+  <path d="M154 188C144 248 144 337 150 434M172 193C166 264 168 358 172 468M246 189C256 258 255 350 249 460M229 194C235 267 231 361 228 473" fill="none" stroke="url(#fabricLight)" stroke-width="7" opacity=".85"/>
+  <path d="M188 193C183 256 188 340 184 453M205 193C211 268 205 365 212 472" fill="none" stroke="#777" stroke-opacity=".06" stroke-width="9"/>
+  <path d="M114 471Q200 486 286 471" fill="none" stroke="#4c4c4c" stroke-width="2.2"/>
+  <path d="M116 476Q200 491 284 476" fill="none" stroke="#030303" stroke-width="3"/>
+  <path d="M118 479Q200 493 282 479" fill="none" stroke="#777" stroke-opacity=".14" stroke-width="1"/>
+  <path d="M47 286L92 311M354 286L308 311" stroke="#555" stroke-opacity=".35" stroke-width="2"/>
+  <g opacity=".9" transform="translate(324 493)">
+    <path d="M0 -25L10 -9L7 4L19 1L14 13L0 23L-14 13L-19 1L-7 4L-10 -9Z" fill="none" stroke="#050505" stroke-width="2.4"/>
+    <path d="M0 -18L0 17M-10 -6L0 0L10 -6M-9 10L0 5L9 10" stroke="#070707" stroke-width="1.8"/>
+    <text x="0" y="39" fill="#080808" font-size="11" letter-spacing="2.8" text-anchor="middle" font-family="Georgia,serif">ELASHA</text>
+    <text x="0" y="50" fill="#080808" font-size="3.8" letter-spacing="1.2" text-anchor="middle" font-family="Arial,sans-serif">ARTWEAR &amp; APPAREL</text>
+  </g>
+  <rect x=".5" y=".5" width="399" height="599" stroke="url(#gold)" stroke-opacity=".17"/>
+</svg>
