@@ -323,3 +323,58 @@
     transform: translateX(-50%);
   }
 }
+
+
+/* ELASHA V2 — unified metallic typography.
+   The second background layer keeps existing solid button, badge and field
+   surfaces intact while the first layer paints the glyphs with a chrome finish. */
+@layer utilities {
+  html body :is(
+    h1, h2, h3, h4, h5, h6,
+    p, a, span, strong, b, em, i, small, label, legend,
+    li, dt, dd, blockquote, figcaption, caption,
+    th, td, button, input, textarea, select, option,
+    summary, time, address, output, code
+  ) {
+    color: #d2d9e2 !important;
+    background-image:
+      linear-gradient(
+        112deg,
+        #657180 0%,
+        #c5ced9 13%,
+        #ffffff 26%,
+        #aab5c3 39%,
+        #f8fbff 51%,
+        #8995a4 64%,
+        #e8edf4 78%,
+        #768292 90%,
+        #dfe5ed 100%
+      ),
+      none !important;
+    background-size: 220% 100%, auto !important;
+    background-position: 0 50%, 0 0 !important;
+    background-repeat: no-repeat, repeat !important;
+    background-clip: text, border-box !important;
+    -webkit-background-clip: text, border-box !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  html body :is(input, textarea, select)::placeholder {
+    color: #9ca8b8 !important;
+    -webkit-text-fill-color: #9ca8b8 !important;
+    opacity: 0.9;
+  }
+
+  html body ::selection {
+    background: #aeb9c8;
+    color: #08090b;
+    -webkit-text-fill-color: #08090b;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html body :is(h1, h2, h3, h4, h5, h6, p, a, span, strong, b, em, i, small, label, li, dt, dd, button) {
+      background-size: 220% 100%, auto !important;
+    }
+  }
+}
