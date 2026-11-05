@@ -2,10 +2,10 @@ name: ELASHA CI
 
 on:
   pull_request:
-    branches: [master]
+    branches: [main]
   push:
     branches:
-      - feat/production-readiness-and-security-14057075474916791828-14009594899622770440
+      - main
   workflow_dispatch:
 
 permissions:
