@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { GarmentPlaceholder } from '@/components/product/GarmentPlaceholder';
 import { Link } from 'react-router-dom';
 import { Heart, ArrowUpRight, MoveUpRight } from 'lucide-react';
 import type { Product } from '@/types';
@@ -146,35 +147,5 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </article>
-  );
-}
-
-function GarmentPlaceholder({ name }: { name: string }) {
-  return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_50%_32%,rgba(212,175,55,0.12),transparent_55%),linear-gradient(145deg,#1b1b1d,#080809)] px-5 py-6">
-      <div className="pointer-events-none absolute inset-4 border border-[#D4AF37]/15" />
-      <div className="pointer-events-none absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/15 to-transparent" />
-      <svg viewBox="0 0 400 420" aria-hidden="true" className="relative z-10 h-[78%] w-[78%] max-w-[320px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.45)] transition-transform duration-700 ease-out group-hover/product:scale-[1.045]">
-        <defs>
-          <linearGradient id="elasha-shirt-fill" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#eae5d9" stopOpacity=".16" />
-            <stop offset="100%" stopColor="#eae5d9" stopOpacity=".035" />
-          </linearGradient>
-          <linearGradient id="elasha-shirt-line" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#f0d77a" stopOpacity=".85" />
-            <stop offset="100%" stopColor="#8c6b1f" stopOpacity=".55" />
-          </linearGradient>
-        </defs>
-        <path d="M143 53 105 76 57 123 91 170 125 148 125 355 275 355 275 148 309 170 343 123 295 76 257 53 228 70 200 78 172 70Z" fill="url(#elasha-shirt-fill)" stroke="url(#elasha-shirt-line)" strokeWidth="2" />
-        <path d="M172 70 Q200 114 228 70" fill="none" stroke="#D4AF37" strokeOpacity=".7" strokeWidth="2" />
-        <path d="M125 148 155 164 M275 148 245 164 M151 355v-20 M249 355v-20" fill="none" stroke="#eae5d9" strokeOpacity=".16" strokeWidth="1.5" />
-        <path d="M200 130v177 M150 218h100" stroke="#D4AF37" strokeOpacity=".15" strokeDasharray="3 7" strokeWidth="1.5" />
-      </svg>
-      <div className="relative z-10 mt-1 text-center">
-        <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-[#D4AF37]/85">ELASHA · Studio</p>
-        <p className="mt-2 max-w-[90%] text-center text-[9px] uppercase tracking-[0.16em] text-bone-muted/70">{name}</p>
-      </div>
-      <span className="absolute bottom-5 right-5 text-[7px] font-mono uppercase tracking-[0.2em] text-bone-muted/40">01 / Preview</span>
-    </div>
   );
 }
