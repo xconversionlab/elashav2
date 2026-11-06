@@ -39,7 +39,28 @@ export function GarmentPlaceholder({ name, className }: GarmentPlaceholderProps)
         className
       )}
       role="img"
-      aria-label={`Concept T-shirt mockup for ${name}. Original product photography has not been added.`}
+      aria-label={`Concept T-shirt mockup for ${name}. Move your mouse over it to tilt the shirt in 3D. Original product photography has not been added.`}
+      onPointerMove={event => {
+        if (event.pointerType !== 'mouse') return;
+        const bounds = event.currentTarget.getBoundingClientRect();
+        if (!bounds.width || !bounds.height) return;
+
+        const horizontal = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width) * 2 - 1));
+        const vertical = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height) * 2 - 1));
+
+        event.currentTarget.style.setProperty('--tilt-x', `${-vertical * 13}deg`);
+        event.currentTarget.style.setProperty('--tilt-y', `${horizontal * 18}deg`);
+        event.currentTarget.style.setProperty('--pointer-x', `${(horizontal + 1) * 50}%`);
+        event.currentTarget.style.setProperty('--pointer-y', `${(vertical + 1) * 50}%`);
+        event.currentTarget.style.setProperty('--tilt-duration', '95ms');
+      }}
+      onPointerLeave={event => {
+        event.currentTarget.style.setProperty('--tilt-x', '0deg');
+        event.currentTarget.style.setProperty('--tilt-y', '0deg');
+        event.currentTarget.style.setProperty('--pointer-x', '50%');
+        event.currentTarget.style.setProperty('--pointer-y', '50%');
+        event.currentTarget.style.setProperty('--tilt-duration', '620ms');
+      }}
     >
       <div
         aria-hidden="true"
@@ -58,7 +79,7 @@ export function GarmentPlaceholder({ name, className }: GarmentPlaceholderProps)
         <span className="text-[#d4af37]/80">No. {String((signature % 89) + 10)}</span>
       </div>
 
-      <div className="relative z-10 flex min-h-0 w-full flex-1 items-center justify-center py-2">
+      <div className="garment-placeholder__stage relative z-10 flex min-h-0 w-full flex-1 items-center justify-center py-2">
         <svg
           viewBox="0 0 480 560"
           aria-hidden="true"
@@ -172,7 +193,7 @@ export function GarmentPlaceholder({ name, className }: GarmentPlaceholderProps)
             {name}
           </p>
           <p className="mt-1 text-[7px] uppercase tracking-[0.2em] text-white/40 sm:text-[8px]">
-            Concept mockup · add product photography
+            Move cursor to rotate · Concept mockup
           </p>
         </div>
         <span className="shrink-0 border border-white/15 px-2 py-1 text-[7px] font-mono uppercase tracking-[0.18em] text-white/55">
