@@ -5,9 +5,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Syne', 'sans-serif'],
+        display: ['Metal Mania', 'sans-serif'],
         serif: ['Cinzel', 'serif'],
-        gothic: ['Syne', 'sans-serif'],
+        gothic: ['Metal Mania', 'sans-serif'],
       },
       colors: {
         dark: {
