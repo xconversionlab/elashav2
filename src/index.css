@@ -31,9 +31,9 @@
      Inter for interface/body copy; Syne for all semantic headings.
      Component utility classes can still provide deliberate local treatments. */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', sans-serif;
-    font-optical-sizing: auto;
-    letter-spacing: -0.02em;
+    font-family: 'Metal Mania', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.025em;
   }
 
   button, input, textarea, select {
@@ -42,14 +42,15 @@
 
   /* Font utility overrides */
   .font-display {
-    font-family: 'Syne', sans-serif;
-    font-optical-sizing: auto;
-    letter-spacing: -0.02em;
+    font-family: 'Metal Mania', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.025em;
   }
 
   .font-gothic {
-    font-family: 'Syne', sans-serif;
-    letter-spacing: -0.01em;
+    font-family: 'Metal Mania', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.025em;
   }
 
   /* Restrained premium dark scrollbar */
@@ -368,4 +369,25 @@ html body ::selection {
   background: #aeb9c8;
   color: #08090b;
   -webkit-text-fill-color: #08090b;
+}
+
+
+/* ELASHA — heavy-metal display typography.
+   Metal Mania is reserved for expressive display text; body copy and compact
+   commerce controls remain in Inter for clarity. Chrome fills stay intact,
+   with a restrained oxblood glow for a darker, harder edge. */
+html body :is(h1, h2, h3, h4, h5, h6, .font-display, .font-gothic, .text-metallic-silver, .text-metallic-chrome) {
+  font-family: 'Metal Mania', 'Pirata One', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.025em;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12),
+    0 2px 0 rgba(20, 22, 27, 0.95),
+    0 5px 12px rgba(75, 0, 18, 0.3);
+}
+
+html body :is(.text-metallic-silver, .text-metallic-chrome) {
+  filter:
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 10px rgba(105, 0, 24, 0.32));
 }
