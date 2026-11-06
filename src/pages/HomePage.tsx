@@ -255,16 +255,18 @@ function ArtDirectionShowcase() {
 
           <div className="lg:col-span-5 relative">
             <Reveal delay={200}>
-              <div className="relative border border-crimson/40 p-2 bg-charcoal rounded-sm shadow-2xl overflow-hidden group">
+              <div className="group relative aspect-[4/5] overflow-hidden rounded-sm border border-crimson/40 bg-charcoal p-2 shadow-2xl">
                 <img
-                  src="/brand-hero.png"
-                  alt="ELASHA Visual Direction"
-                  className="w-full h-auto object-cover rounded-sm transition-transform duration-700 group-hover:scale-105"
+                  src="/artwork/IMG-20261008-WA0076.jpg"
+                  alt="Original ELASHA artwork — studio visual direction"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-2 h-[calc(100%-1rem)] w-[calc(100%-1rem)] rounded-sm object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 text-xs font-mono text-bone-muted flex justify-between items-center">
-                  <span className="uppercase tracking-widest text-[10px]">Studio Reference #01</span>
-                  <span className="text-crimson-light font-semibold">ELASHA ARTWARE</span>
+                <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-dark/95 via-dark/10 to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-3 font-mono text-xs text-bone-muted">
+                  <span className="text-[10px] uppercase tracking-widest">Studio Reference #01</span>
+                  <span className="shrink-0 font-semibold text-crimson-light">ELASHA ARTWARE</span>
                 </div>
               </div>
             </Reveal>
