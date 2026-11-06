@@ -40,8 +40,7 @@ export function GarmentPlaceholder({ name, className }: GarmentPlaceholderProps)
       )}
       role="img"
       aria-label={`Concept T-shirt mockup for ${name}. Move your mouse over it to tilt the shirt in 3D. Original product photography has not been added.`}
-      onPointerMove={event => {
-        if (event.pointerType !== 'mouse') return;
+      onMouseMove={event => {
         const bounds = event.currentTarget.getBoundingClientRect();
         if (!bounds.width || !bounds.height) return;
 
@@ -52,9 +51,9 @@ export function GarmentPlaceholder({ name, className }: GarmentPlaceholderProps)
         event.currentTarget.style.setProperty('--tilt-y', `${horizontal * 18}deg`);
         event.currentTarget.style.setProperty('--pointer-x', `${(horizontal + 1) * 50}%`);
         event.currentTarget.style.setProperty('--pointer-y', `${(vertical + 1) * 50}%`);
-        event.currentTarget.style.setProperty('--tilt-duration', '95ms');
+        event.currentTarget.style.setProperty('--tilt-duration', '90ms');
       }}
-      onPointerLeave={event => {
+      onMouseLeave={event => {
         event.currentTarget.style.setProperty('--tilt-x', '0deg');
         event.currentTarget.style.setProperty('--tilt-y', '0deg');
         event.currentTarget.style.setProperty('--pointer-x', '50%');

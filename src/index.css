@@ -414,24 +414,21 @@ html body :is(.text-metallic-silver, .text-metallic-chrome) {
   background:
     radial-gradient(
       circle at var(--pointer-x) var(--pointer-y),
-      rgba(255, 255, 255, 0.16),
-      rgba(212, 175, 55, 0.055) 20%,
-      transparent 48%
+      rgba(255, 255, 255, 0.18),
+      rgba(212, 175, 55, 0.07) 22%,
+      transparent 50%
     );
   transition: opacity 220ms ease;
 }
 
 .garment-placeholder__stage {
-  transform-style: preserve-3d;
-}
-
-.garment-placeholder__shirt {
-  transform-origin: 50% 55%;
+  position: relative;
+  transform-origin: 50% 50%;
   transform-style: preserve-3d;
   transform:
     rotateX(var(--tilt-x))
     rotateY(var(--tilt-y))
-    translateZ(18px);
+    translateZ(20px);
   transition:
     transform var(--tilt-duration) cubic-bezier(0.16, 1, 0.3, 1),
     filter var(--tilt-duration) ease;
@@ -440,35 +437,28 @@ html body :is(.text-metallic-silver, .text-metallic-chrome) {
   will-change: transform;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .garment-placeholder:hover::after {
-    opacity: 1;
-  }
+.garment-placeholder__shirt {
+  transform-origin: 50% 55%;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.16));
+}
 
-  .garment-placeholder:hover .garment-placeholder__shirt {
-    transform:
-      rotateX(var(--tilt-x))
-      rotateY(var(--tilt-y))
-      translateZ(42px)
-      scale(1.035);
-    filter:
-      drop-shadow(0 30px 34px rgba(0, 0, 0, 0.62))
-      drop-shadow(0 0 22px rgba(212, 175, 55, 0.13));
-  }
+.garment-placeholder:hover::after {
+  opacity: 1;
+}
+
+.garment-placeholder:hover .garment-placeholder__stage {
+  transform:
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y))
+    translateZ(48px)
+    scale(1.035);
+  filter:
+    drop-shadow(0 30px 34px rgba(0, 0, 0, 0.62))
+    drop-shadow(0 0 22px rgba(212, 175, 55, 0.13));
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .garment-placeholder__shirt {
+  .garment-placeholder__stage {
     transition: none;
-    transform: none;
-    will-change: auto;
-  }
-
-  .garment-placeholder:hover .garment-placeholder__shirt {
-    transform: none;
-  }
-
-  .garment-placeholder::after {
-    display: none;
   }
 }
