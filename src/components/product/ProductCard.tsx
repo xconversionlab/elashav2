@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { handleProductPhotoMove, resetProductPhotoTilt } from '@/lib/productPhotoMotion';
 import { GarmentPlaceholder } from '@/components/product/GarmentPlaceholder';
 import { Link } from 'react-router-dom';
 import { Heart, ArrowUpRight, MoveUpRight } from 'lucide-react';
@@ -19,6 +20,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const frontImage = product.front_image_url || product.placeholder_image;
   const backImage = product.back_image_url;
   const isPlaceholder = Boolean(frontImage && /\/placeholders\//i.test(frontImage));
+  const hasRealProductImage = Boolean(frontImage && !isPlaceholder);
   const canSwitchView = Boolean(frontImage && backImage && !isPlaceholder);
   const isTee = isTShirtProduct(product);
 
@@ -27,8 +29,13 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="relative aspect-[4/5] overflow-hidden bg-[radial-gradient(ellipse_at_50%_35%,rgba(255,255,255,0.05),transparent_65%),linear-gradient(145deg,#151518,#0a0a0c)]">
         <Link
           to={`/shop/${product.slug}`}
-          className="absolute inset-0 z-0 block overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#D4AF37]"
+          className={cn(
+            'absolute inset-0 z-0 block overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#D4AF37]',
+            hasRealProductImage && 'product-photo-stage'
+          )}
           onContextMenu={event => event.preventDefault()}
+          onMouseMove={hasRealProductImage ? handleProductPhotoMove : undefined}
+          onMouseLeave={hasRealProductImage ? resetProductPhotoTilt : undefined}
           aria-label={`View ${product.name}`}
         >
           {isPlaceholder ? (
