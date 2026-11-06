@@ -11,6 +11,7 @@ import { MaskedLines } from '@/components/motion/MaskedLines';
 import { BrandLoader } from '@/components/motion/PageTransition';
 import { ProductReviews } from '@/components/product/ProductReviews';
 import { ProductCard } from '@/components/product/ProductCard';
+import { GarmentPlaceholder } from '@/components/product/GarmentPlaceholder';
 
 export function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -119,7 +120,7 @@ export function ProductDetailPage() {
           <div className="space-y-4">
             {/* Consistent 4:5 complete product gallery without cropping */}
             <div className="relative aspect-[4/5] overflow-hidden border border-charcoal-border bg-[radial-gradient(ellipse_at_50%_35%,rgba(255,255,255,0.05),transparent_65%),linear-gradient(145deg,#141417,#09090b)] shadow-2xl p-4 sm:p-6 flex items-center justify-center">
-              {frontImage ? (
+              {frontImage && !/\/placeholders\//i.test(frontImage) ? (
                 <img
                   src={frontImage}
                   alt={product.name + ' — front view'}
@@ -129,9 +130,7 @@ export function ProductDetailPage() {
                   )}
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center px-6 text-center text-[10px] uppercase tracking-[0.2em] text-bone-muted">
-                  Product photography not added
-                </div>
+                <GarmentPlaceholder name={product.name} className="px-6 py-7 sm:px-8 sm:py-8" />
               )}
               {backImage && (
                 <img
