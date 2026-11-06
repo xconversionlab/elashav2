@@ -400,8 +400,7 @@ html body :is(.text-metallic-silver, .text-metallic-chrome) {
   filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.48));
 }
 
-.garment-placeholder:hover .garment-placeholder__shirt,
-.group\\/product:hover .garment-placeholder__shirt {
+.garment-placeholder:hover .garment-placeholder__shirt {
   transform: translateY(-5px) scale(1.025);
   filter:
     drop-shadow(0 28px 34px rgba(0, 0, 0, 0.58))
@@ -413,8 +412,7 @@ html body :is(.text-metallic-silver, .text-metallic-chrome) {
     transition: none;
   }
 
-  .garment-placeholder:hover .garment-placeholder__shirt,
-  .group\\/product:hover .garment-placeholder__shirt {
+  .garment-placeholder:hover .garment-placeholder__shirt {
     transform: none;
   }
 }
