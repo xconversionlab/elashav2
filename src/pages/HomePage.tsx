@@ -220,57 +220,36 @@ function ArtDirectionShowcase() {
   return (
     <section className="relative bg-dark py-24 border-b border-charcoal-border/80 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
-            <Reveal>
-              <SectionLabel index="02">Art Direction</SectionLabel>
-            </Reveal>
-            <Reveal delay={120}>
-              <h2 className="mt-6 font-display text-3xl sm:text-5xl font-bold text-bone leading-tight">
-                Signature Design <span className="text-metallic-gold font-display font-light">×</span> Modern Craft
-              </h2>
-            </Reveal>
-            <Reveal delay={240}>
-              <p className="mt-6 text-sm text-bone-muted leading-relaxed max-w-xl">
-                Every artwork begins with an intention. Each line, symbol, and colour becomes part of a process that gives form to an idea.
-              </p>
-            </Reveal>
-            <Reveal delay={360}>
-              <div className="mt-6 grid grid-cols-1 gap-2 text-xs text-bone-muted sm:mt-8 sm:flex sm:flex-wrap sm:gap-4">
-                <div className="flex min-h-11 w-full items-center border border-charcoal-border bg-charcoal/80 px-3 py-3 rounded-sm sm:w-auto sm:px-4">
-                  <span className="mr-3 shrink-0 font-mono text-crimson">01</span>
-                  <span>Sacred art. Cosmic consciousness.</span>
-                </div>
-                <div className="flex min-h-11 w-full items-center border border-charcoal-border bg-charcoal/80 px-3 py-3 rounded-sm sm:w-auto sm:px-4">
-                  <span className="mr-3 shrink-0 font-mono text-crimson">02</span>
-                  <span>Clothing with a deeper meaning.</span>
-                </div>
-                <div className="flex min-h-11 w-full items-center border border-charcoal-border bg-charcoal/80 px-3 py-3 rounded-sm sm:w-auto sm:px-4">
-                  <span className="mr-3 shrink-0 font-mono text-crimson">03</span>
-                  <span>Art as a path to the infinite.</span>
-                </div>
+        <div className="max-w-4xl">
+          <Reveal>
+            <SectionLabel index="02">Art Direction</SectionLabel>
+          </Reveal>
+          <Reveal delay={120}>
+            <h2 className="mt-6 font-display text-3xl sm:text-5xl font-bold text-bone leading-tight">
+              Signature Design <span className="text-metallic-gold font-display font-light">×</span> Modern Craft
+            </h2>
+          </Reveal>
+          <Reveal delay={240}>
+            <p className="mt-6 text-sm text-bone-muted leading-relaxed max-w-xl">
+              Every artwork begins with an intention. Each line, symbol, and colour becomes part of a process that gives form to an idea.
+            </p>
+          </Reveal>
+          <Reveal delay={360}>
+            <div className="mt-6 grid grid-cols-1 gap-2 text-xs text-bone-muted sm:mt-8 sm:flex sm:flex-wrap sm:gap-4">
+              <div className="flex min-h-11 w-full items-center border border-charcoal-border bg-charcoal/80 px-3 py-3 rounded-sm sm:w-auto sm:px-4">
+                <span className="mr-3 shrink-0 font-mono text-crimson">01</span>
+                <span>Sacred art. Cosmic consciousness.</span>
               </div>
-            </Reveal>
-          </div>
-
-          <div className="lg:col-span-5 relative">
-            <Reveal delay={200}>
-              <div className="group relative aspect-[4/5] overflow-hidden rounded-sm border border-crimson/40 bg-charcoal p-2 shadow-2xl">
-                <img
-                  src="/artwork/IMG-20261008-WA0076.jpg"
-                  alt="Original ELASHA artwork — studio visual direction"
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-2 h-[calc(100%-1rem)] w-[calc(100%-1rem)] rounded-sm object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="pointer-events-none absolute inset-2 bg-gradient-to-t from-dark/95 via-dark/10 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-3 font-mono text-xs text-bone-muted">
-                  <span className="text-[10px] uppercase tracking-widest">Studio Reference #01</span>
-                  <span className="shrink-0 font-semibold text-crimson-light">ELASHA ARTWARE</span>
-                </div>
+              <div className="flex min-h-11 w-full items-center border border-charcoal-border bg-charcoal/80 px-3 py-3 rounded-sm sm:w-auto sm:px-4">
+                <span className="mr-3 shrink-0 font-mono text-crimson">02</span>
+                <span>Clothing with a deeper meaning.</span>
               </div>
-            </Reveal>
-          </div>
+              <div className="flex min-h-11 w-full items-center border border-charcoal-border bg-charcoal/80 px-3 py-3 rounded-sm sm:w-auto sm:px-4">
+                <span className="mr-3 shrink-0 font-mono text-crimson">03</span>
+                <span>Art as a path to the infinite.</span>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
