@@ -312,7 +312,7 @@
   button:hover .text-metallic-silver,
   .group\/product:hover .text-metallic-silver,
   .group:hover .text-metallic-silver {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)) brightness(1.12);
+    filter: drop-shadow(0 0 10px rgba(244, 210, 105, 0.52)) brightness(1.12);
   }
 
   .text-crimson,
@@ -331,9 +331,10 @@
   }
 }
 
-/* ELASHA V2 — global metallic typography.
-   Kept outside Tailwind's @layer utilities so production tree-shaking cannot
-   discard this element-selector rule. Existing font families and layout stay intact. */
+/* ELASHA V2 — site-wide metallic gold typography.
+   Kept outside Tailwind layers so production tree-shaking cannot discard it.
+   Every textual element uses the same warm gold foil gradient; surfaces and
+   image assets are deliberately left unchanged. */
 html body :is(
   h1, h2, h3, h4, h5, h6,
   p, a, span, strong, b, em, i, small, label, legend,
@@ -341,19 +342,20 @@ html body :is(
   th, td, button, input, textarea, select, option,
   summary, time, address, output, code
 ) {
-  color: #d2d9e2 !important;
+  color: #d4af37 !important;
   background-image:
     linear-gradient(
       112deg,
-      #657180 0%,
-      #c5ced9 13%,
-      #ffffff 26%,
-      #aab5c3 39%,
-      #f8fbff 51%,
-      #8995a4 64%,
-      #e8edf4 78%,
-      #768292 90%,
-      #dfe5ed 100%
+      #77530d 0%,
+      #b88618 11%,
+      #f6df8b 23%,
+      #fff2b4 31%,
+      #d4af37 43%,
+      #91650e 55%,
+      #e8c75a 67%,
+      #fff0a0 78%,
+      #bd8b1d 90%,
+      #f4df91 100%
     ),
     none !important;
   background-size: 220% 100%, auto !important;
@@ -362,17 +364,20 @@ html body :is(
   background-clip: text, border-box !important;
   -webkit-background-clip: text, border-box !important;
   -webkit-text-fill-color: transparent !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  text-shadow:
+    0 1px 0 rgba(255, 243, 190, 0.12),
+    0 2px 7px rgba(116, 76, 8, 0.2);
 }
 
+/* Keep form hints legible while preserving the gold palette. */
 html body :is(input, textarea, select)::placeholder {
-  color: #9ca8b8 !important;
-  -webkit-text-fill-color: #9ca8b8 !important;
-  opacity: 0.9;
+  color: #d4af37 !important;
+  -webkit-text-fill-color: #d4af37 !important;
+  opacity: 0.78;
 }
 
 html body ::selection {
-  background: #aeb9c8;
+  background: #d4af37;
   color: #08090b;
   -webkit-text-fill-color: #08090b;
 }
@@ -392,7 +397,7 @@ html body :is(h1, h2, h3, h4, h5, h6, .font-display, .font-gothic, .text-metalli
 html body :is(.text-metallic-silver, .text-metallic-chrome) {
   filter:
     drop-shadow(0 2px 2px rgba(0, 0, 0, 0.85))
-    drop-shadow(0 0 10px rgba(105, 0, 24, 0.32));
+    drop-shadow(0 0 10px rgba(183, 135, 25, 0.32));
 }
 
 
