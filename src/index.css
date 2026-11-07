@@ -6,7 +6,7 @@
   font-family: 'Cloister Black';
   src: url('/fonts/cloister-black.ttf') format('truetype');
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 300;
   font-display: swap;
 }
 
@@ -30,14 +30,12 @@
   body {
     @apply bg-[#070708] font-sans text-[#eae5d9] antialiased min-h-screen selection:bg-[#D4AF37] selection:text-[#070708];
     font-family: 'Cloister Black', Georgia, serif;
-    font-synthesis-weight: none;
+    font-synthesis: weight style;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
 
-  /* Enforce the approved ELASHA type system globally:
-     Inter for interface/body copy; Syne for all semantic headings.
-     Component utility classes can still provide deliberate local treatments. */
+  /* Cloister Black is the single typeface used throughout the storefront and admin interface. */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cloister Black', Georgia, serif;
     font-weight: 400;
@@ -56,7 +54,7 @@
   }
 
   .font-gothic {
-    font-family: 'Metal Mania', sans-serif;
+    font-family: 'Cloister Black', Georgia, serif;
     font-weight: 400;
     letter-spacing: 0.025em;
   }
