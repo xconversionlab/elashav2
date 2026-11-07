@@ -378,12 +378,9 @@ html body ::selection {
 }
 
 
-/* ELASHA — heavy-metal display typography.
-   Metal Mania is reserved for expressive display text; body copy and compact
-   commerce controls remain in Inter for clarity. Chrome fills stay intact,
-   with a restrained oxblood glow for a darker, harder edge. */
+/* Cloister Black is applied consistently to display and metallic text as well. */
 html body :is(h1, h2, h3, h4, h5, h6, .font-display, .font-gothic, .text-metallic-silver, .text-metallic-chrome) {
-  font-family: 'Metal Mania', 'Pirata One', serif !important;
+  font-family: 'Cloister Black', Georgia, serif !important;
   font-weight: 400 !important;
   letter-spacing: 0.025em;
   text-shadow:
